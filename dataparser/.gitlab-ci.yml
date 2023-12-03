@@ -1,0 +1,22 @@
+stages:
+  - test
+  - deploy
+
+variables:
+  # Define variables as needed, e.g., for environment configuration
+
+before_script:
+  - npm install
+
+test:
+  stage: test
+  script:
+    - npm test
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo "Deploy to production"
+    # Add your deployment commands here
